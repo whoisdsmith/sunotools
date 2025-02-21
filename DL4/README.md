@@ -1,4 +1,3 @@
-
 # Suno AI Media Downloader
 
 This script is designed to download media from Suno AI, specifically audio, images, and video. The script can extract metadata from the media, estimate the BPM (beats per minute) of the audio file, and tag the downloaded MP3 file with the relevant information.
@@ -40,7 +39,7 @@ pip install requests mutagen librosa argparse
 
     ```bash
     python get_suno.py -u https://suno.com/song/example-id
-    ```	
+    ```
 
 2. **Download multiple Suno AI songs using a comma-separated list of URLs:**
 
