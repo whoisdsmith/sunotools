@@ -10,11 +10,11 @@
   <p>👉 We update quickly, please star.</p>
 </div>
 <p align="center">
-  <a target="_blank" href="./README.md">English</a> 
-  | <a target="_blank" href="./README_CN.md">简体中文</a> 
-  | <a target="_blank" href="https://suno.gcui.ai">Demo</a> 
-  | <a target="_blank" href="https://suno.gcui.ai/docs">Docs</a> 
-  | <a target="_blank" href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fgcui-art%2Fsuno-api&env=SUNO_COOKIE&project-name=suno-api&repository-name=suno-api">Deploy with Vercel</a> 
+  <a target="_blank" href="./README.md">English</a>
+  | <a target="_blank" href="./README_CN.md">简体中文</a>
+  | <a target="_blank" href="https://suno.gcui.ai">Demo</a>
+  | <a target="_blank" href="https://suno.gcui.ai/docs">Docs</a>
+  | <a target="_blank" href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fgcui-art%2Fsuno-api&env=SUNO_COOKIE&project-name=suno-api&repository-name=suno-api">Deploy with Vercel</a>
 </p>
 <p align="center">
   <a href="https://www.producthunt.com/products/gcui-art-suno-api-open-source-sunoai-api/reviews?utm_source=badge-product_review&utm_medium=badge&utm_souce=badge-gcui&#0045;art&#0045;suno&#0045;api&#0045;open&#0045;source&#0045;sunoai&#0045;api" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=577408&theme=light" alt="gcui&#0045;art&#0047;suno&#0045;api&#0058;Open&#0045;source&#0032;SunoAI&#0032;API - Use&#0032;API&#0032;to&#0032;call&#0032;the&#0032;music&#0032;generation&#0032;AI&#0032;of&#0032;suno&#0046;ai&#0046; | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
@@ -340,25 +340,25 @@ We update quickly, please star us on Github: [github.com/gcui-art/suno-api](http
 
 ## 🌟 Features
 
--   Perfectly implements the creation API from `app.suno.ai`
--   Compatible with the format of OpenAI’s `/v1/chat/completions` API.
--   Automatically keep the account active.
--   Supports `Custom Mode`
--   One-click deployment to Vercel
--   In addition to the standard API, it also adapts to the API Schema of Agent platforms like GPTs and Coze, so you can use it as a tool/plugin/Action for LLMs and integrate it into any AI Agent.
--   Permissive open-source license, allowing you to freely integrate and modify.
+- Perfectly implements the creation API from `app.suno.ai`
+- Compatible with the format of OpenAI’s `/v1/chat/completions` API.
+- Automatically keep the account active.
+- Supports `Custom Mode`
+- One-click deployment to Vercel
+- In addition to the standard API, it also adapts to the API Schema of Agent platforms like GPTs and Coze, so you can use it as a tool/plugin/Action for LLMs and integrate it into any AI Agent.
+- Permissive open-source license, allowing you to freely integrate and modify.
 
 ## 🚀 Getting Started
 
 ### 1\. Obtain the cookie of your app.suno.ai account
 
-1.  Head over to [app.suno.ai](https://app.suno.ai/) using your browser.
-2.  Open up the browser console: hit `F12` or access the `Developer Tools`.
-3.  Navigate to the `Network tab`.
-4.  Give the page a quick refresh.
-5.  Identify the request that includes the keyword `client?_clerk_js_version`.
-6.  Click on it and switch over to the `Header` tab.
-7.  Locate the `Cookie` section, hover your mouse over it, and copy the value of the Cookie.
+1. Head over to [app.suno.ai](https://app.suno.ai/) using your browser.
+2. Open up the browser console: hit `F12` or access the `Developer Tools`.
+3. Navigate to the `Network tab`.
+4. Give the page a quick refresh.
+5. Identify the request that includes the keyword `client?_clerk_js_version`.
+6. Click on it and switch over to the `Header` tab.
+7. Locate the `Cookie` section, hover your mouse over it, and copy the value of the Cookie.
 
 Your browser does not support frames.
 
@@ -378,31 +378,29 @@ git clone https://github.com/gcui-art/suno-api.git cd suno-api npm install
 
 ### 3\. Configure suno-api
 
--   If deployed to Vercel, please add an environment variable `SUNO_COOKIE` in the Vercel dashboard, with the value of the cookie obtained in the first step.
-    
--   If you’re running this locally, be sure to add the following to your `.env` file:
-    
+- If deployed to Vercel, please add an environment variable `SUNO_COOKIE` in the Vercel dashboard, with the value of the cookie obtained in the first step.
+
+- If you’re running this locally, be sure to add the following to your `.env` file:
+
     ```bash
     SUNO_COOKIE=<your-cookie>
     ```
-    
 
 ### 4\. Run suno-api
 
--   If you’ve deployed to Vercel:
-    
-    -   Please click on Deploy in the Vercel dashboard and wait for the deployment to be successful.
-    -   Visit the `https://<vercel-assigned-domain>/api/get_limit` API for testing.
--   If running locally:
-    
-    -   Run `npm run dev`.
-    -   Visit the `http://localhost:3000/api/get_limit` API for testing.
--   If the following result is returned:
-    
+- If you’ve deployed to Vercel:
+
+  - Please click on Deploy in the Vercel dashboard and wait for the deployment to be successful.
+  - Visit the `https://<vercel-assigned-domain>/api/get_limit` API for testing.
+- If running locally:
+
+  - Run `npm run dev`.
+  - Visit the `http://localhost:3000/api/get_limit` API for testing.
+- If the following result is returned:
+
     ```json
     { "credits_left": 50, "period": "day", "monthly_limit": 50, "monthly_usage": 50 }
     ```
-    
 
 it means the program is running normally.
 
@@ -442,7 +440,7 @@ It will automatically fill in the lyrics.
 
 | Code | Description | Links |
 | --- | --- | --- |
-| 200 | 
+| 200 |
 success
 
 <small>Media type</small>
@@ -452,10 +450,6 @@ success
 ```json
 [ { "0": { "id": "string", "title": "string", "image_url": "string", "lyric": "string", "audio_url": "string", "video_url": "string", "created_at": "string", "model_name": "string", "status": "string", "gpt_description_prompt": "string", "prompt": "string", "type": "string", "tags": "string" }, "1": { "id": "string", "title": "string", "image_url": "string", "lyric": "string", "audio_url": "string", "video_url": "string", "created_at": "string", "model_name": "string", "status": "string", "gpt_description_prompt": "string", "prompt": "string", "type": "string", "tags": "string" } } ]
 ```
-
-
-
-
 
  | *No links* |
 
@@ -469,7 +463,7 @@ Generally used in OpenAI compatible clients.
 
 | Code | Description | Links |
 | --- | --- | --- |
-| 200 | 
+| 200 |
 success
 
 <small>Media type</small>
@@ -479,10 +473,6 @@ success
 ```json
 { "data": "string" }
 ```
-
-
-
-
 
  | *No links* |
 
@@ -502,7 +492,7 @@ The custom mode enables users to provide additional details about the music, suc
 
 | Code | Description | Links |
 | --- | --- | --- |
-| 200 | 
+| 200 |
 success
 
 <small>Media type</small>
@@ -512,10 +502,6 @@ success
 ```json
 [ { "0": { "id": "string", "title": "string", "image_url": "string", "lyric": "string", "audio_url": "string", "video_url": "string", "created_at": "string", "model_name": "string", "status": "string", "gpt_description_prompt": "string", "prompt": "string", "type": "string", "tags": "string" }, "1": { "id": "string", "title": "string", "image_url": "string", "lyric": "string", "audio_url": "string", "video_url": "string", "created_at": "string", "model_name": "string", "status": "string", "gpt_description_prompt": "string", "prompt": "string", "type": "string", "tags": "string" } } ]
 ```
-
-
-
-
 
  | *No links* |
 
@@ -531,7 +517,7 @@ Generate lyrics based on Prompt.
 
 | Code | Description | Links |
 | --- | --- | --- |
-| 200 | 
+| 200 |
 success
 
 <small>Media type</small>
@@ -542,22 +528,18 @@ success
 { "text": "string", "title": "string", "status": "string" }
 ```
 
-
-
-
-
  | *No links* |
 
 | Name | Description |
 | --- | --- |
-| 
+|
 ids
 
 string
 
 (query)
 
- | 
+ |
 
 Audio IDs, separated by commas. Leave blank to return a list of all music.
 
@@ -565,7 +547,7 @@ Audio IDs, separated by commas. Leave blank to return a list of all music.
 
 | Code | Description | Links |
 | --- | --- | --- |
-| 200 | 
+| 200 |
 success
 
 <small>Media type</small>
@@ -576,15 +558,11 @@ success
 [ { "0": { "id": "string", "title": "string", "image_url": "string", "lyric": "string", "audio_url": "string", "video_url": "string", "created_at": "string", "model_name": "string", "status": "string", "gpt_description_prompt": "string", "prompt": "string", "type": "string", "tags": "string" }, "1": { "id": "string", "title": "string", "image_url": "string", "lyric": "string", "audio_url": "string", "video_url": "string", "created_at": "string", "model_name": "string", "status": "string", "gpt_description_prompt": "string", "prompt": "string", "type": "string", "tags": "string" } } ]
 ```
 
-
-
-
-
  | *No links* |
 
 | Code | Description | Links |
 | --- | --- | --- |
-| 200 | 
+| 200 |
 success
 
 <small>Media type</small>
@@ -594,10 +572,6 @@ success
 ```json
 { "credits_left": 0, "period": "string", "monthly_limit": 0, "monthly_usage": 0 }
 ```
-
-
-
-
 
  | *No links* |
 

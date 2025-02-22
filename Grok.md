@@ -7,7 +7,9 @@ To address your query, I've created a JavaScript script that parses a list of Su
 ## Solution
 
 ### Overview
+
 This script:
+
 1. Accepts multiple Suno.com song URLs as command-line arguments.
 2. Fetches the HTML content of each song page using `node-fetch`.
 3. Extracts song metadata embedded in `<script>` tags using `node-html-parser`.
@@ -16,13 +18,16 @@ This script:
 6. Formats the information into a Markdown file for each song, saved in a `songs` directory.
 
 ### Requirements
+
 - **Node.js**: Ensure you have Node.js installed (version supporting ES modules, e.g., 14+).
 - **Dependencies**: Install the required packages by running:
+
   ```bash
   npm install node-fetch node-html-parser
   ```
 
 ### Script Code
+
 Create a file named `parseSunoSongs.js` and add the following code:
 
 ```javascript
@@ -180,21 +185,27 @@ main().catch(error => console.error('Script failed:', error));
 ## How to Use
 
 ### Running the Script
+
 1. Save the script as `parseSunoSongs.js`.
 2. Open a terminal in the script's directory.
 3. Install dependencies:
+
    ```bash
    npm install node-fetch node-html-parser
    ```
+
 4. Run the script with one or more Suno song URLs:
+
    ```bash
    node parseSunoSongs.js https://suno.com/song/12bfb381-df41-4452-9846-399e5e70153d https://suno.com/song/c0e77570-5f30-4482-a981-bd169f75432e
    ```
 
 ### Output
+
 - For each valid URL, the script creates a Markdown file in the `songs` directory.
 - Filename format: `Artist - Title - SongID.md` (e.g., `The Casket Diaries - Neon Lights & Lullabies - 12bfb381-df41-4452-9846-399e5e70153d.md`).
 - Example Markdown content:
+
   ```
   # Neon Lights & Lullabies
 
@@ -213,6 +224,7 @@ main().catch(error => console.error('Script failed:', error));
   [Verse 1]
   Neon lights flicker in the night...
   ```
+
 - If a URL fails (e.g., invalid or network error), the script logs an error and continues with the next URL.
 
 ---
@@ -233,6 +245,7 @@ main().catch(error => console.error('Script failed:', error));
 ---
 
 ## Notes and Limitations
+
 - **Dynamic Content**: The script relies on data embedded in `<script>` tags (`self.__next_f.push`). If Suno changes how data is loaded (e.g., fully API-based), the script may need adjustment.
 - **Audio URL Access**: The `audio_url` from the JSON is included as the download link. However, downloading may require authentication or adherence to Suno’s terms, depending on your account status.
 - **Lyrics**: Extracted from script tags; may include extra text if not cleanly separated from other data. An alternative approach using HTML parsing (e.g., `<p>` with class `whitespace-pre-wrap`) could be implemented for precision.
