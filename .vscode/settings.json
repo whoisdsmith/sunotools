@@ -1,6 +1,0 @@
-{
-    "files.autoSave": "afterDelay",
-    "editor.experimentalEditContextEnabled": true,
-    "editor.experimentalGpuAcceleration": "off",
-    "editor.experimentalWhitespaceRendering": "font"
-}
