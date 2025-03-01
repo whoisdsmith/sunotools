@@ -1,0 +1,129 @@
+{
+  "Language": "English",
+  "Translation": {
+    "Page Title": "Suno API AI Music Generator",
+    "Page About": "Suno API AI Music Generator is a free AI music generation software, calling the existing API interface to achieve AI music generation. If you have any questions, please visit our website url address: https://sunoapi.net",
+    "Page Header": "Create your own unique Suno AI music song now, use it for free and enjoy the fun of innovative AI music generation! ",
+
+    "Music Song Create": "Music Song Creation",
+    "Music Song Square": "Music Share Square",
+    "Music Project Readme": "Music Project Readme",
+    "Visit Official WebSite": "Visit Official Website",
+    "Visit Official WebSite1": "Visit Suno Official Website",
+    "Visit Official WebSite2": "Visit Project Official  Website",
+    "Join WeChat Group": "Join wechat group for discussion",
+
+    "Custom": "Custom mode",
+    "Title": "Song Title:",
+    "Title Desc": "Please enter the song name, with a maximum of 100 words.",
+    "Tags": "Style of music: ",
+    "Tags Desc": "Please select a maximum of four music styles.",
+    "Prompt": "Your own lyrics:",
+    "Prompt Desc": "Please enter your lyrics, up to a maximum of 1000 words.",
+
+    "Random Style": "Random Style",
+    "Random Lyrics": "Random lyrics",
+    "Generate Lyrics": "Generate lyrics",
+
+    "Title Placeholder": "Give your music songs a name to identify, share, and discover.",
+    "Tags Placeholder": "Choose the music style you want, Suno AI's model can understand genres and atmosphere.",
+    "Prompt Placeholder": "Enter your own lyrics, or various existing lyrics, professional lyric assistance tools: https://poe.com/SuperSunoMaster.",
+    
+    "Desc Prompt": "Song Description: ",
+    "Desc Value": "Directly enter your desired style of music and theme, and create professional quality Suno AI music songs with one click!",
+    "Desc Reamrk": "Describe the style of music and theme you want (e.g. : Acoustic pop music about the holidays). Use genres and atmospheres rather than specific artists and songs.",
+    "Instrumental": "Instrumental",
+    "Instrumental Help": "Create a song without lyrics.",
+    "Private": "Private",
+    "Private Help": "Download and save non-public songs on your own.",
+
+    "Generate": "Generate Now 🎵",
+
+    "DescPrompt Error": "Please enter the song description, for example: write a song similar to the style of 'Nocturne' called 'Nocturne: Take the Stage to Receive Awards'.",
+
+    "Custom Title Error": "Please enter the title of the song, for example: Nocturne on stage to accept the award.",
+    "Custom Tags Error": "Please select a music style, for example: Chinese pop (中国流行音乐).",
+    "Custom Prompt Error": "Please enter your own lyrics, if not you can enter a keyword word, then click Generate Lyrics.",
+
+    "Generate Submit Error": "Suno AI Music song generation failed to submit: ",
+    "Generate Status Error": "Suno AI Music song generation failed to status: ",
+
+    "Fetch Status Progress": "Suno AI Music song generation Please wait...",
+    "Fetch Status Running": "Suno AI Music song is being generated: ",
+    "Fetch Status Success": "Suno AI Music song generation success: ",
+
+    "Generate Success": "Suno AI Music song generation success! ",
+
+    "Identity Placeholder": "Enter your ID to identify e.g. : Email account.",
+    "Identity Help": "Please enter your Email account to identify yourself.",
+    "Session Placeholder": "Enter your Session to use free generated music.",
+    "Session Help": "Please enter your Session to use the free music generation.",
+    "Cookie Placeholder": "Enter your Cookie to use free music generation.",
+    "Cookie Help": "Please enter your Cookie to generate music for free.",
+
+    "Setting": "Set information",
+    "SaveInfo Identity Error": "Please enter Identity",
+    "SaveInfo Session Error": "Please enter Session",
+    "SaveInfo Cookie Error": "Please enter Cookie",
+    "SaveInfo": "Save information",
+    "SaveInfo Success": "Save information success!",
+    "SaveInfo Error": "Failed to save information!",
+
+    "TokenAuth Error": "Please save the information first, and then refresh the page to use it normally!",
+
+    "FetchFeed": "Get music clip",
+    "FeedID": "Music Clip ID:",
+    "FeedID Placeholder": "Please enter the generated music clip id, click get to display.",
+    "FeedID Help": "Please enter the generated music clip id, click get to display.",
+    "FeedBtn": "Get information",
+    "FetchFeed FeedID Empty": "Please enter the generated music clip id.",
+    "FetchFeed FeedID Error": "The music clip id format is incorrect.",
+    "FetchFeed Error": "Suno AI music clip information obtained failed: ",
+    "FetchFeed Success": "Suno AI music clip information obtained success! ",
+
+    "Generation Task Status": "The task of music generation has not been completed yet, and the current status is: ",
+
+    "Enter Search Keywords": "Please enter search keywords",
+    "No Search Result": "No search results found.",
+
+    "Music Duration": "Song duration: ",
+    "Music Created At": "Generation time: ",
+    "Music Prompt": "Generate lyrics: \n",
+
+    "Images TuGeYue Music": "Upload images",
+    "Images TuGeYue Upload": "Select image:",
+    "Images TuGeYue Help": "Upload images to generate corresponding songs based on the image content (upload image file size limit: 2MB)",
+    "Upload Images Error": "The size of the image file exceeds the limit. The size limit for uploading image files is: ",
+    "Upload Images Success": "Image upload successful, intelligent recognition in progress. Please wait!",
+    "Upload Images Analytics": "Please help me analyze the content of this picture, summarize and describe the information expressed in the picture. The first sentence provides a brief description of the theme conveyed by the image, while the second sentence provides a detailed description of the content of the image. Directly output the theme and content, without using words such as' this image expresses', 'in this image', or 'this image conveys'. Simply output the theme and content.",
+    "Analytics Images Error": "Image intelligent recognition failed: ",
+    "Analytics Images Success": "Image intelligent recognition successful, can be modified as needed and then click generate immediately!",
+    "Friendly Link": "Sponsors and friendly links",
+
+    "Song Part": "Part",
+    "Full Song": "Whole",
+    "Reuse Prompt": "Reuse prompt",
+    "Continue Extend": "Extend",
+    "Get Whole Song": "Get whole song",
+    "Extend Button": "Extend🎵",
+    "Extend Placeholder": "Enter additional lyrics to expand the song based on your previous song paragraphs. After creating the expanded song, click the Get Whole Song button on the playback page to obtain the complete song.",
+    "Extend From": "Extend from time point:",
+    "Extend From Help": "Extend a new song segment (e.g. 120) from the time point of extending the song clip id. If you don't understand, there is no need to modify it. The extension will start from the end of the song by default.",
+    "Extend From Clip": "Extend song clip id:",
+
+    "Select Model": "Music model: ",
+    "Select Model Placeholder": "Please select a model for generating music songs. The default model is chirp-v3-0.",
+    "Select Model Help": "chirp-v3-0 model can generate up to 2 minutes of song fragments, chirp-v3-5 model can generate up to 4 minutes of song fragments.",
+    "Select Model Error": "Please select a music model, for example: chirp-v3-0.",
+
+    "Upload Audio Music": "Upload audios",
+    "Upload Audio Files": "Select audio:",
+    "Upload Audio Help": "Upload audio to generate corresponding songs based on the audio content (upload audio file size limit: 2MB, must be original audio between 6 and 60 seconds long.)",
+    "Upload Audio Error": "The audio file size exceeds the limit. The upload audio file size limit is: ",
+    "Upload Audio Success": "The audio file has been successfully uploaded, stored, and recognized. Please go to the music sharing square playback page to operate the extension! ",
+    "Analytics Audio Error": "Audio file upload storage recognition failed: ",
+    "Upload Audio Type": "Uploaded",
+
+    "Get Similar Song": "Similar"
+  }
+}
