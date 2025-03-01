@@ -5,16 +5,20 @@ Base URL: `https://sunozara.com/api`
 ## Authentication
 
 ### Login
+
 - **URL**: `/login`
 - **Method**: `POST`
 - **Body**:
+
 ```json
 {
     "email": "user@example.com",
     "password": "password"
 }
 ```
+
 - **Response**:
+
 ```json
 {
     "token": "access_token_here",
@@ -27,9 +31,11 @@ Base URL: `https://sunozara.com/api`
 ```
 
 ### Register
+
 - **URL**: `/register`
 - **Method**: `POST`
 - **Body**:
+
 ```json
 {
     "name": "User Name",
@@ -42,9 +48,10 @@ Base URL: `https://sunozara.com/api`
 ## Audio Management
 
 ### Get All Audios
+
 - **URL**: `/audios`
 - **Method**: `GET`
-- **Headers**: 
+- **Headers**:
   - `Authorization: Bearer {token}`
 - **Query Parameters**:
   - `page`: Page number (optional)
@@ -53,12 +60,14 @@ Base URL: `https://sunozara.com/api`
   - `language`: Filter by language (optional)
 
 ### Upload Audio
+
 - **URL**: `/audios`
 - **Method**: `POST`
-- **Headers**: 
+- **Headers**:
   - `Authorization: Bearer {token}`
   - `Content-Type: multipart/form-data`
 - **Body**:
+
 ```form-data
 title: "Audio Title"
 description: "Audio Description"
@@ -69,39 +78,45 @@ cover_image: [file]
 ```
 
 ### Get Audio Details
+
 - **URL**: `/audios/{id}`
 - **Method**: `GET`
-- **Headers**: 
+- **Headers**:
   - `Authorization: Bearer {token}`
 
 ### Update Audio
+
 - **URL**: `/audios/{id}`
 - **Method**: `PUT`
-- **Headers**: 
+- **Headers**:
   - `Authorization: Bearer {token}`
   - `Content-Type: multipart/form-data`
 - **Body**: Same as Upload Audio
 
 ### Delete Audio
+
 - **URL**: `/audios/{id}`
 - **Method**: `DELETE`
-- **Headers**: 
+- **Headers**:
   - `Authorization: Bearer {token}`
 
 ## Categories
 
 ### Get All Categories
+
 - **URL**: `/categories`
 - **Method**: `GET`
-- **Headers**: 
+- **Headers**:
   - `Authorization: Bearer {token}`
 
 ### Create Category
+
 - **URL**: `/categories`
 - **Method**: `POST`
-- **Headers**: 
+- **Headers**:
   - `Authorization: Bearer {token}`
 - **Body**:
+
 ```json
 {
     "name": "Category Name",
@@ -112,17 +127,20 @@ cover_image: [file]
 ## Languages
 
 ### Get All Languages
+
 - **URL**: `/languages`
 - **Method**: `GET`
-- **Headers**: 
+- **Headers**:
   - `Authorization: Bearer {token}`
 
 ### Add Language
+
 - **URL**: `/languages`
 - **Method**: `POST`
-- **Headers**: 
+- **Headers**:
   - `Authorization: Bearer {token}`
 - **Body**:
+
 ```json
 {
     "name": "Language Name",
@@ -133,17 +151,20 @@ cover_image: [file]
 ## User Management
 
 ### Get User Profile
+
 - **URL**: `/user/profile`
 - **Method**: `GET`
-- **Headers**: 
+- **Headers**:
   - `Authorization: Bearer {token}`
 
 ### Update User Profile
+
 - **URL**: `/user/profile`
 - **Method**: `PUT`
-- **Headers**: 
+- **Headers**:
   - `Authorization: Bearer {token}`
 - **Body**:
+
 ```json
 {
     "name": "Updated Name",
@@ -153,29 +174,33 @@ cover_image: [file]
 ```
 
 ### Get User Favorites
+
 - **URL**: `/user/favorites`
 - **Method**: `GET`
-- **Headers**: 
+- **Headers**:
   - `Authorization: Bearer {token}`
 
 ### Add to Favorites
+
 - **URL**: `/user/favorites/{audio_id}`
 - **Method**: `POST`
-- **Headers**: 
+- **Headers**:
   - `Authorization: Bearer {token}`
 
 ### Remove from Favorites
+
 - **URL**: `/user/favorites/{audio_id}`
 - **Method**: `DELETE`
-- **Headers**: 
+- **Headers**:
   - `Authorization: Bearer {token}`
 
 ## Additional APIs
 
 ### Articles
+
 - **URL**: `/api/articles`
 - **Method**: `GET`
-- **Headers**: 
+- **Headers**:
   - `Authorization: Bearer {token}`
 - **Query Parameters**:
   - `page`: Page number
@@ -183,9 +208,10 @@ cover_image: [file]
   - `category`: Filter by category
 
 ### Audio Books
+
 - **URL**: `/api/audiobooks`
 - **Method**: `GET`
-- **Headers**: 
+- **Headers**:
   - `Authorization: Bearer {token}`
 - **Query Parameters**:
   - `page`: Page number
@@ -193,15 +219,18 @@ cover_image: [file]
   - `language`: Filter by language
 
 ### Episodes
+
 - **URL**: `/api/episodes/{audiobook_id}`
 - **Method**: `GET`
-- **Headers**: 
+- **Headers**:
   - `Authorization: Bearer {token}`
 
 ### Phone Verification
+
 - **URL**: `/api/auth/verify-phone`
 - **Method**: `POST`
 - **Body**:
+
 ```json
 {
     "phone": "+919876543210",
@@ -210,17 +239,20 @@ cover_image: [file]
 ```
 
 ### Location APIs
+
 - **URL**: `/api/locations`
 - **Method**: `GET`
-- **Headers**: 
+- **Headers**:
   - `Authorization: Bearer {token}`
 
 ### Subscription
+
 - **URL**: `/api/subscriptions`
 - **Method**: `GET`
-- **Headers**: 
+- **Headers**:
   - `Authorization: Bearer {token}`
 - **Response**:
+
 ```json
 {
     "plans": [
@@ -236,26 +268,30 @@ cover_image: [file]
 ```
 
 ### Tags
+
 - **URL**: `/api/tags`
 - **Method**: `GET`
-- **Headers**: 
+- **Headers**:
   - `Authorization: Bearer {token}`
 
 ### Products
+
 - **URL**: `/api/products`
 - **Method**: `GET`
-- **Headers**: 
+- **Headers**:
   - `Authorization: Bearer {token}`
 - **Query Parameters**:
   - `page`: Page number
   - `category`: Filter by category
 
 ### Coupons
+
 - **URL**: `/api/coupons/verify`
 - **Method**: `POST`
-- **Headers**: 
+- **Headers**:
   - `Authorization: Bearer {token}`
 - **Body**:
+
 ```json
 {
     "code": "DISCOUNT50"
@@ -267,6 +303,7 @@ cover_image: [file]
 All endpoints may return these error responses:
 
 - **401 Unauthorized**
+
 ```json
 {
     "message": "Unauthenticated."
@@ -274,6 +311,7 @@ All endpoints may return these error responses:
 ```
 
 - **403 Forbidden**
+
 ```json
 {
     "message": "You do not have permission to perform this action."
@@ -281,6 +319,7 @@ All endpoints may return these error responses:
 ```
 
 - **404 Not Found**
+
 ```json
 {
     "message": "Resource not found."
@@ -288,6 +327,7 @@ All endpoints may return these error responses:
 ```
 
 - **422 Validation Error**
+
 ```json
 {
     "message": "The given data was invalid.",
@@ -311,11 +351,13 @@ When you exceed the rate limit, you'll receive a 429 Too Many Requests response.
 ## Testing the API
 
 You can test these APIs using tools like:
+
 - Postman
 - cURL
 - Any HTTP client library
 
 Example cURL request:
+
 ```bash
 curl -X POST https://sunozara.com/api/login \
     -H "Content-Type: application/json" \
@@ -325,5 +367,6 @@ curl -X POST https://sunozara.com/api/login \
 ## Support
 
 For API support or questions, please contact:
-- Email: support@sunozara.com
-- Technical Support: tech@sunozara.com
+
+- Email: <support@sunozara.com>
+- Technical Support: <tech@sunozara.com>
