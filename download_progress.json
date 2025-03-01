@@ -1,0 +1,12 @@
+{
+  "https://suno.ai/song/test": {
+    "completed": true,
+    "timestamp": "2025-03-01T17:08:52.688756",
+    "title": "Test Song"
+  },
+  "https://suno.ai/song/error-test": {
+    "completed": false,
+    "error": "Test error",
+    "timestamp": "2025-03-01T17:21:49.970356"
+  }
+}

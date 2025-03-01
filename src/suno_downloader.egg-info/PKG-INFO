@@ -1,3 +1,41 @@
+Metadata-Version: 2.2
+Name: suno_downloader
+Version: 0.1.0
+Summary: A tool to download songs from Suno.com
+Home-page: https://github.com/yourusername/suno-downloader
+Author: Your Name
+Author-email: your.email@example.com
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: aiohttp>=3.9.3
+Requires-Dist: aiofiles>=23.2.1
+Requires-Dist: beautifulsoup4>=4.12.3
+Requires-Dist: mutagen>=1.47.0
+Requires-Dist: playwright>=1.42.0
+Requires-Dist: tqdm>=4.66.2
+Provides-Extra: test
+Requires-Dist: pytest>=8.0.2; extra == "test"
+Requires-Dist: pytest-asyncio>=0.23.5; extra == "test"
+Requires-Dist: pytest-mock>=3.12.0; extra == "test"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
 # Suno Song Downloader
 
 An efficient and automated tool to download songs from Suno.com, including cover images, lyrics, and metadata in MP3 format.
@@ -57,12 +95,12 @@ An efficient and automated tool to download songs from Suno.com, including cover
 
 ```plaintext
 downloads/
-├── song_name_1/
-│   ├── song_name_1.mp3 (with embedded metadata)
-│   ├── cover.jpg
-│   ├── lyrics.txt
-│   └── prompt.txt
-├── song_name_2/
+â”œâ”€â”€ song_name_1/
+â”‚   â”œâ”€â”€ song_name_1.mp3 (with embedded metadata)
+â”‚   â”œâ”€â”€ cover.jpg
+â”‚   â”œâ”€â”€ lyrics.txt
+â”‚   â””â”€â”€ prompt.txt
+â”œâ”€â”€ song_name_2/
 ...
 ```
 

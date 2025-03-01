@@ -1,0 +1,10 @@
+README.md
+setup.py
+src/suno_downloader/__init__.py
+src/suno_downloader/downloader.py
+src/suno_downloader.egg-info/PKG-INFO
+src/suno_downloader.egg-info/SOURCES.txt
+src/suno_downloader.egg-info/dependency_links.txt
+src/suno_downloader.egg-info/requires.txt
+src/suno_downloader.egg-info/top_level.txt
+tests/test_suno_downloader.py

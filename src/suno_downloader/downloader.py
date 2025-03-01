@@ -1,21 +1,23 @@
-from playwright.sync_api import sync_playwright
+# Copy the entire content of suno_downloader.py here
+from playwright.async_api import async_playwright
 import os
 import re
-import requests
-from bs4 import BeautifulSoup
-from mutagen.id3 import ID3, USLT, APIC, ID3NoHeaderError
-import asyncio
-import aiohttp
-from playwright.async_api import async_playwright
 import json
 import time
 from datetime import datetime
+from bs4 import BeautifulSoup
+from mutagen.id3 import (
+    ID3, USLT, APIC, TIT2, TPE1, TALB,
+    TDRC, TCON, COMM, ID3NoHeaderError
+)
 from typing import Dict, List, Optional, Tuple, Set
 from dataclasses import dataclass
 from pathlib import Path
 import logging
 from tqdm.asyncio import tqdm
+import aiohttp
 import aiofiles
+import asyncio
 
 # Configuration
 CONFIG = {
@@ -50,9 +52,16 @@ class SongMetadata:
 
 
 class SunoDownloader:
-    def __init__(self, output_dir: str = "downloads"):
+    def __init__(self, output_dir: str = "downloads", log_dir: Optional[str] = None):
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
+
+        # Set up log directory
+        if log_dir:
+            CONFIG['log_file'] = os.path.join(log_dir, 'suno_downloader.log')
+        log_path = Path(CONFIG['log_file'])
+        log_path.parent.mkdir(parents=True, exist_ok=True)
+
         self.setup_logging()
         self.progress: Dict[str, dict] = self.load_progress()
         self.session_data: Dict = self.load_session()
@@ -63,13 +72,22 @@ class SunoDownloader:
         self.context = None
 
     def setup_logging(self):
+        """Set up logging with both file and console handlers"""
+        handlers = [
+            logging.StreamHandler()  # Console handler always included
+        ]
+
+        try:
+            # Add file handler if we can create/write to the log file
+            file_handler = logging.FileHandler(CONFIG['log_file'])
+            handlers.append(file_handler)
+        except Exception as e:
+            print(f"Warning: Could not set up file logging: {e}")
+
         logging.basicConfig(
             level=logging.INFO,
             format='%(asctime)s - %(levelname)s - %(message)s',
-            handlers=[
-                logging.FileHandler(CONFIG['log_file']),
-                logging.StreamHandler()
-            ]
+            handlers=handlers
         )
         self.logger = logging.getLogger(__name__)
 
@@ -108,7 +126,7 @@ class SunoDownloader:
             title = await page.title()
             lyrics = await page.text_content("section.w-full > div:nth-child(1)")
 
-            # Extract MP3 URL (you'll need to implement the correct selector)
+            # Extract MP3 URL
             mp3_url = await page.evaluate("""() => {
                 const audioElement = document.querySelector('audio source');
                 return audioElement ? audioElement.src : null;
@@ -230,7 +248,7 @@ class SunoDownloader:
     @staticmethod
     def sanitize_filename(filename: str) -> str:
         """Sanitize filename to be safe for all operating systems"""
-        return re.sub(r'[<>:"/\\|?*]', '_', filename)
+        return re.sub(r'[<>:"/\\|?*]', '_', filename).rstrip('_')
 
     async def save_text_file(self, filepath: Path, content: str):
         """Save text content to file asynchronously"""
@@ -317,7 +335,7 @@ class SunoDownloader:
         try:
             # Wait for either login form or profile indicator
             await page.wait_for_selector('input[type="email"], .profile-indicator',
-                                       timeout=CONFIG['selector_timeout'])
+                                         timeout=CONFIG['selector_timeout'])
             # If login form exists, we're not logged in
             login_form = await page.query_selector('input[type="email"]')
             return not bool(login_form)
@@ -350,7 +368,8 @@ class SunoDownloader:
             for element in song_elements:
                 url = await element.get_attribute('href')
                 if url:
-                    full_url = f"https://suno.ai{url}" if url.startswith('/') else url
+                    full_url = f"https://suno.ai{url}" if url.startswith(
+                        '/') else url
                     song_urls.add(full_url)
 
             self.logger.info(f"Found {len(song_urls)} songs!")
@@ -361,29 +380,29 @@ class SunoDownloader:
             return set()
 
 
-async def main():
-    # Initialize downloader
-    downloader = SunoDownloader()
-
-    # Get login credentials
-    email = input("Enter your Suno.com email: ")
-    password = input("Enter your Suno.com password: ")
-
-    # Login to Suno.com
-    if not await downloader.login(email, password):
-        print("Failed to login. Please check your credentials.")
-        return
-
-    # Scrape song URLs
-    song_urls = await downloader.scrape_song_urls()
-    if not song_urls:
-        print("No songs found in your profile.")
-        return
-
-    print(f"Found {len(song_urls)} songs. Starting download...")
-
-    # Start downloading
-    await downloader.download_songs(list(song_urls))
-
 if __name__ == "__main__":
+    async def main():
+        # Initialize downloader
+        downloader = SunoDownloader()
+
+        # Get login credentials
+        email = input("Enter your Suno.com email: ")
+        password = input("Enter your Suno.com password: ")
+
+        # Login to Suno.com
+        if not await downloader.login(email, password):
+            print("Failed to login. Please check your credentials.")
+            return
+
+        # Scrape song URLs
+        song_urls = await downloader.scrape_song_urls()
+        if not song_urls:
+            print("No songs found in your profile.")
+            return
+
+        print(f"Found {len(song_urls)} songs. Starting download...")
+
+        # Start downloading
+        await downloader.download_songs(list(song_urls))
+
     asyncio.run(main())
